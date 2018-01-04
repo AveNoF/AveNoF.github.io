@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>機械学習に対応してるGPUと対応してないGPU（TensorFlow）</title>
+	<meta name="generator" content="LibreOffice 5.1.6.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2017-09-05T05:41:48.901271375"/>
+</head>
+<body lang="ja-JP" dir="ltr" marginheight="50"  marginwidth="50">
+<p style="text-decoration: none"><u><font face="Abyssinica SIL"><font size="6" style="font-size: 36pt"><b>深層学習用に買うべき</b></font></font><font face="Abyssinica SIL"><font size="7" style="font-size: 36pt"><span lang="en-US">GPU</u></span></font></font></p>
+<p style="text-decoration: none"><br/>
+<br/>
+
+</p>
+<p><u><meta name="changed" content="2017-09-04T07:15:18.579040571"><meta name="created" content="00:00:00"><meta name="created" content="00:00:00"><!-- へ返信 (2017/09/04, 06:41): "..."
+ --><font size="7" style="font-size: 32pt"><b>はじめに</b></font></u></p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">AI</span></font></span></font>に興味があり機械学習を勉強したい今日この頃</p>
+<p>深層学習ライブラリとして有名な<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">TensorFlow</span></font></span></font>や<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">Caffe</span></font></span></font>をいじったりして画像処理や画像認識をさせたりしてみたい</p>
+<p>のではあるが、どうも最終的に高度な処理を行うためには<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">GPU</span></font></span></font>が必要らしい。</p>
+<p><u><font size="7" style="font-size: 32pt"><b>要求条件</b></font></u></p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">AMDer</span></font></span></font>の私にとっては残念ながら</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">AMD</span></font></span></font><font face="Liberation Serif, serif"><span lang="en-US">製の</span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">GPU</span></font></span></font>はその深層学習に使える計算機として<b>劣勢な立場</b>にある。</p>
+<p>なぜなら<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">TensorFlow</span></font></span></font>や<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">Caffe</span></font></span></font>などの多くの深層学習ライブラリは<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">CUDA</span></font></span></font>を使用する。</p>
+<p>つまり<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">AMD</span></font></span></font>製<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">GPU</span></font></span></font>は<b>機械学習をしたい人間にとって良い選択肢にならない</b>のだ</p>
+<p>（<b>一応、</b><font face="Liberation Serif, serif"><span lang="en-US">
+	<b>AMD</b></span></font><b>製</b><font face="Liberation Serif, serif"><span lang="en-US"><b>GPU</b></span></font><b>で動くライブラリもあるのだが少数であるし、いま対応してない多くのライブラリもロードマップ上では</b><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US"><b>AMD</b></span></font></span></font><b>製</b><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US"><b>GPU</b></span></font></span></font><b>も対応できるように</b></p>
+<p><b>することを視野に入れているはずではあるがそれはまた未来の話である。</b>）</p>
+<p><b>しかし、</b><font face="Liberation Serif, serif"><span lang="en-US">
+	<font face="Liberation Serif, serif"><span lang="en-US"><b>NVIDIA</b></span></font></span></font><b>製の</b><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US"><b>GPU</b></span></font></span></font><b>においても全ての</b><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US"><b>GPU</b></span></font></span></font><b>が深層学習ライブラリにおいて使えるわけではない。</b></p>
+<p style="font-weight: normal">さらにもっと世代的な制約があるのである。</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><a href="https://www.tensorflow.org/install/install_sources"target="_blank"><font face="Liberation Serif, serif"><span lang="en-US">https://www.tensorflow.org/install/install_sources</span></font></a></span></font></p>
+<p style="font-weight: normal">より</p>
+<p><span style="font-weight: normal">以下の条件を満たした</span><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US"><span style="font-weight: normal">GPU</span></span></font></span></font><span style="font-weight: normal">が機械学習に使えると書いてある</span></p>
+<p style="text-decoration: none"><i><b>＞・</b></i><font face="Liberation Serif, serif"><span lang="en-US"><span style="font-variant: normal"><font color="#212121"><font face="Roboto, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span lang="en-US"><i><b>GPU
+card with CUDA Compute Capability 3.0 or higher.</b></i></span></span></font></font></font></span></span></font></p>
+<p style="font-variant: normal; letter-spacing: normal; text-decoration: none">
+<font color="#212121">つまりこの条件を満たすグラッフィックスカードを買えば良いのである。</font></p>
+<p style="font-variant: normal; letter-spacing: normal; font-style: normal; text-decoration: none">
+<font color="#212121"><font face="Arial, sans-serif"><font size="7" style="font-size: 32pt"><b>では<meta name="created" content="00:00:00"><!-- へ返信 (2017/09/04, 06:41): "..."
+ -->何を買うべきか</b></font></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#212121"><b>そして（２０１７年現在に置いて）それぞれの</b><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">GPU</span></font></span></font><b>における</b><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">CUDA
+Compute Capability </span></font></span></font><b>のバージョンは以下のサイトに書いてある。</b></font></p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><a href="https://developer.nvidia.com/cuda-gpus" target="_blank"><font face="Liberation Serif, serif"><span lang="en-US">https://developer.nvidia.com/cuda-gpus</span></font></a></span></font></p>
+<p>このサイトに書いてあることを見るに</p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#000000"><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>GPU</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>アーキテクチャの世代が</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>Kepler</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>以前の</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>GPU</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>は</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>CUDA
+Compute Capability</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>のバージョンが</b></span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#000000"><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>2.0</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>や</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>2.1</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>であり</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>TensorFlow</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>の動作に必要条件である</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="4" style="font-size: 15pt"><span lang="en-US"><span style="font-style: normal"><b>3.0</b></span></span></font></font></span></font><font size="4" style="font-size: 15pt"><span style="font-style: normal"><b>以上を満たしていないのである。</b></span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#000000"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><b>つまり深層学習をやりたい人は</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="3" style="font-size: 13pt"><span lang="en-US"><span style="font-style: normal"><b>GTX600</b></span></span></font></font></span></font><font size="3" style="font-size: 12pt"><span style="font-style: normal"><b>番代以上の</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="3" style="font-size: 13pt"><span lang="en-US"><span style="font-style: normal"><b>GPU</b></span></span></font></font></span></font><font size="3" style="font-size: 12pt"><span style="font-style: normal"><b>を買わなければならないのである。</b></span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#000000"><font size="5" style="font-size: 18pt"><span style="font-style: normal"><b>しかし</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="5" style="font-size: 18pt"><span lang="en-US"><span style="font-style: normal"><b>GTX600</b></span></span></font></font></span></font><font size="5" style="font-size: 18pt"><span style="font-style: normal"><b>番代の</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="5" style="font-size: 18pt"><span lang="en-US"><span style="font-style: normal"><b>CUDA
+Compute Capability</b></span></span></font></font></span></font><font size="5" style="font-size: 18pt"><span style="font-style: normal"><b>のバージョンは</b></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="arial, sans-serif"><font size="5" style="font-size: 18pt"><span lang="en-US"><span style="font-style: normal"><b>3.0</b></span></span></font></font></span></font><font size="5" style="font-size: 18pt"><span style="font-style: normal"><b>であり</b></span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal; font-style: normal">
+<font color="#000000"><font size="5" style="font-size: 18pt"><b>今後近いうちに対応しなくなることは明白である。</b></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#000000"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal">よって、私のようにゲームもあんまりせず</span></span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">GPU</span></span></span></font></span></font><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal">を深層学習ライブラリに使いたい人は</span></span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#ed1c24"><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="4" style="font-size: 16pt"><span lang="en-US"><span style="font-style: normal"><u><b>CUDA
+Compute Capability</b></u></span></span></font></font></span></font><u><font size="4" style="font-size: 16pt"><b>のバージョン</b></font></u><u><font size="4" style="font-size: 16pt"><span style="font-style: normal"><b>が</b></span></font></u><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="4" style="font-size: 16pt"><span lang="en-US"><span style="font-style: normal"><u><b>5.0</b></u></span></span></font></font></span></font><u><font size="4" style="font-size: 16pt"><b>である</b></font></u></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#ed1c24"><font face="Liberation Serif, serif"><span lang="en-US"><u><font face="Liberation Serif, serif"><font size="5" style="font-size: 20pt"><span lang="en-US"><span style="font-style: normal"><b>GTX750</b></span></span></font></font></span></font><font size="5" style="font-size: 20pt"><b>もしくは</b></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="5" style="font-size: 20pt"><span lang="en-US"><span style="font-style: normal"><b>GTX750Ti</b></span></span></font></font></span></font><font size="5" style="font-size: 20pt"><b>や</b></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="5" style="font-size: 20pt"><span lang="en-US"><span style="font-style: normal"><b>GTX900</b></span></span></font></font></span></font><font size="5" style="font-size: 20pt"><b>番台以上の</b></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="5" style="font-size: 20pt"><span lang="en-US"><span style="font-style: normal"><b>GPU</b></span></span></font></font></u></span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal"><font color="#000000"><u><font size="4" style="font-size: 16pt"><b>を買うことをおすすめする。</b></font></u></font></p>
+<p style="font-variant: normal; letter-spacing: normal; text-decoration: none">
+<font color="#000000"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">とりわけ</span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">GTX750</span></span></span></font></font></span></font><font size="3" style="font-size: 12pt"><span style="font-weight: normal">か</span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">GTX750Ti</span></span></span></font></font></span></font><font size="3" style="font-size: 12pt"><span style="font-weight: normal">あたりはあと１年もすればかなり中古を安値で手にできるようになるだろう。</span></font></font></p>
+<p style="font-variant: normal; letter-spacing: normal; font-weight: normal; text-decoration: none">
+<font color="#000000"><font size="3" style="font-size: 12pt">コスパにもワッパにも優れているので調度良いのではないだろうか？</font></font></p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><br/>
+<br/>
+<br/>
+<br/>
+</span></font><br/>
+<br/>
+
+</p>
+<p><strike>もっとも今の私は<font face="Liberation Serif, serif"><span lang="en-US">GTX1050Ti</span></font>を載せたゲーミングノートを所有してるため、<font face="Liberation Serif, serif"><span lang="en-US"><br/>
+</span></font>わざわざデスクトップ用に新しい環境を用意する必要性を持ってないのだが。</strike></p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="font-variant: normal; letter-spacing: normal; text-decoration: none">
+<font color="#000000"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">作成日</span></font><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">2017-09-04</span></span></span></font></font></span></font></font></p>
+</body>
+</html>

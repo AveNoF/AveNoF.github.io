@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Inspiron7000GamingのwifiがUbuntu16.04にてうまく動作しない問題の解決方法AC3165</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.27" />
+</head>
+
+<body bgcolor="white" marginheight="50"  marginwidth="50">
+<font size="5"><strong>Inspiron7000GamingのwifiがUbuntu16.04にてうまく動作しない問題の解決方法　AC3165</strong></font>
+<br></br>
+<br></br>
+<br></br>
+<p>大学合格祝いにゲーミングノート（Dell</a>のinspiron7000Gaming）を親に買ってもらいました。</p>
+<p>しかしUbuntuを入れたあと問題が発生</p>
+<p>Ubuntu16.04をインストールするときはwifi接続ができたのですが。</p>
+<p>インストール後にUbuntuを起動してみるとwifi接続してるはずなのに有線接続の際の矢印二本の表示になってるのです。　しかも接続先が選べない状況に・・・・・</p>
+<p>問題の原因を探るべくlspciで調べると</p>
+<p>03:00.0 Network controller: Intel Corporation Wireless 3165 (rev 79)</p>
+<p>と出てきた無線ランカードのこれが問題のようです</p>
+<p><span style="text-decoration: line-through;">情弱大国語</span>日本語で調べてもごみみたいな情報しかでて来なかったので英語で検索すると</p>
+<p><a href="https://codeyarns.com/2017/02/04/how-to-make-intel-wireless-ac-3165-work-in-ubuntu/">codeyarns.com</a></p>
+<p>どうやらカーネルアップデートで治ったと書いてある。</p>
+<p><a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">http://kernel.ubuntu.com/~kernel-ppa/mainline/</a>　　　こ↑こ↓から</p>
+<p> </p>
+<p>linux-headers-4.9.16-040916_4.9.16-040916.201703180831_all.deb をダウンロードしてソフトウェアセンターでインストール</p>
+<p>今（2017/03/18）現在Ubuntu16.04のカーネルバージョンの4.8から4.9へアップデートしました。</p>
+<p>アップデート後再起動すると無事wifi接続のおかしな表示が治り、何事もなく無線ランへ接続できるようになりました。</p>
+<p>ありがとう　英語</p>
+<p>作成日：2017-03-19</p>
+</body>
+
+</html>

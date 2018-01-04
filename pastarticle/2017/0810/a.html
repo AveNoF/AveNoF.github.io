@@ -1,0 +1,72 @@
+
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<head>
+	<title>OrangePiを買ったのでリモートデスクトップできるようにした。</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.27" />
+</head>
+<body bgcolor="white" marginheight="50"  marginwidth="50">
+<font size="5"><strong>orangePiを買ったのでリモートデスクトップできるようにした。</strong></font>
+<br></br>
+<br></br>
+<br></br>
+<p></p>
+<p>コンピューターボード「OrangePiPCPlus」をAliexpressから<del>特に理由もなく</del>購入しました。</p>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">OrangePi届いた！ <a href="https://t.co/KryeqVf3x0">pic.twitter.com/KryeqVf3x0</a></p>&mdash; AveNoF (@AveNoF_Pyrit) 
+<a href="https://twitter.com/AveNoF_Pyrit/status/894754261468274688">2017年8月8日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<br>
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">OrangePiPCPlus、電力供給にアダプタ使わなきゃいけないのがアレだけど性能はRaspi2くらいでおまけに8GBeMMCとwifiもついてきて2400円だから普通に使える <a href="https://t.co/dz5pEqRknj">pic.twitter.com/dz5pEqRknj</a></p>&mdash; AveNoF (@AveNoF_Pyrit) <a href="https://twitter.com/AveNoF_Pyrit/status/894871164895379456">2017年8月8日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>いちいちキーボードとか繋ぐのめんどくさいんで自動起動にします。</p>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<p>$ sudo apt-get install x11vnc</p>
+<br></br>
+<p>$ x11vnc -storepasswd</p>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<p>次にスタートアップの時に起動するように設定する。</p>
+<br></br>
+<p>/home/[ユーザー名]/.config/autostart/   の下に</p>
+<br>
+<p>x11vnc.desktop</p>
+<br>
+<p>を作成。</p>
+<br>
+<p>x11vnc.desktopのなかには</p>
+<br>
+<br>
+<p>[Desktop Entry]</p>
+<p>Encoding=UTF-8</p>
+<p>Type=Application</p>
+<p>Name=X11VNC</p>
+<p>Comment=</p>
+<p>Exec=x11vnc -forever -display :0 -rfbauth /home/[ユーザー名]/.vnc/passwd</p>
+<p>StartupNotify=false</p>
+<p>Terminal=false</p>
+<p>Hidden=false</p>
+<br>
+<p>を書き込む。</p>
+<p>これでx11vncが自動起動する。</p>
+<br>
+<br>
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">これでしばらく楽できる <a href="https://t.co/yOQt87JTCU">pic.twitter.com/yOQt87JTCU</a></p>&mdash; AveNoF (@AveNoF_Pyrit) <a href="https://twitter.com/AveNoF_Pyrit/status/895320457305444353">2017年8月9日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<br>
+<p>追記：技適が取得されてなくとも悪質な出力とかの無線機器でなければ特に問題ないらしい。<p>
+<p>作成日：2017-08-10</p>
+</body>
+
+</html>

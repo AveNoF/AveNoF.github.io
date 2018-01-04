@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>UbuntuのnVidia環境でPyritのCUDAモジュールをコンパイルする</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.27" />
+</head>
+
+<body bgcolor="white" marginheight="50"  marginwidth="50">
+<font size="5"><strong>UbuntuのnVidia環境でPyritのCUDAモジュールをコンパイルする</strong></font>
+<br></br>
+<br></br>
+<br></br>
+<p>まずはソフトウェアとアップデートからnVidiaの公式グラフィックスドライバーに変えます。</p>
+<p>git clone https://github.com/JPaulMora/Pyrit.git</p>
+<p>でダウンロード　次に</p>
+<p>https://developer.nvidia.com/cuda-downloads</p>
+<p>からcuda toolkitをダウンロードしてインストール</p>
+<p>その後は</p>
+<p>cd /modules/cpyrit-cuda/</p>
+<p>python setup.py build</p>
+<p>sudo python setup.py install</p>
+<p>で完成なはず.</p>
+<br>
+<p>作成日：2017-04-17</p>
+<br></br>
+<br></br>
+<p><strong>追記</strong></p>
+<br></br>
+<p><strong>公式レポジトリのCUDAモジュールがコンパイルできない問題を修正しました。</strong></p>
+<A Href="https://github.com/AveNoF/pyrit_cuda_correct">修正版はこちらからどうぞ</A>
+<p>何か問題があったらツイッターかissuesのところでご連絡ください。</p>
+
+<p>作成日：2018-01-15</p>
+</body>
+
+</html>
