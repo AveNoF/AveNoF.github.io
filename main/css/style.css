@@ -46,7 +46,7 @@ table {
   border-spacing: 0;
 }
 
-/* particleground demo */
+
 
 * {
   -webkit-box-sizing: border-box;
@@ -77,16 +77,18 @@ body {
 #intro {
   position: absolute;
   left: 0;
-  top: 100%;
+ top: 50%;
   padding: 0 20px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 h1 {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.015em;
+    text-align: left;
+
 }
 /*
 h1::after {
@@ -100,7 +102,7 @@ h1::after {
 }*/
 p {
   margin: 0 0 5px 0;
-  font-size: 10px;
+  font-size: 20px;
   color: #8c7aff;
 }
 .btn {
